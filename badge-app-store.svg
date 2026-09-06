@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 72" width="240" height="72" role="img" aria-label="Telecharger dans l App Store">
+  <rect x="3" y="3" width="234" height="66" rx="12" fill="#000" stroke="#000" stroke-width="6"/>
+  <path d="M42 24c-2 0-4 1-5 2-1 1-2 3-2 5 2 0 4-1 5-2 1-1 2-3 2-5zm4 12c0-4 3-6 3-6-2-3-5-3-6-3-3 0-5 2-6 2-1 0-3-2-6-2-3 0-6 2-7 5-3 5-1 13 2 17 1 2 3 4 5 4 2 0 3-1 6-1 2 0 3 1 5 1 2 0 4-2 6-4 1-2 2-4 2-4s-4-2-4-9z" fill="#fff"/>
+  <text x="72" y="31" font-family="Lexend,Segoe UI,sans-serif" font-size="12" fill="#B8B8B8" letter-spacing="1.4">TÉLÉCHARGER SUR L’</text>
+  <text x="72" y="53" font-family="Lexend,Segoe UI,sans-serif" font-size="21" font-weight="700" fill="#fff">App Store</text>
+</svg>
