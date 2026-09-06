@@ -81,6 +81,30 @@
                 "@type": "Answer",
                 "text": "Oui. Chaque course part au choix à tous les chauffeurs, à un groupe privé que vous avez créé, ou à un seul chauffeur en particulier. Le choix se fait course par course."
             }
+        },
+        {
+            "@type": "Question",
+            "name": "Comment est-ce que je gagne de l'argent en cédant une course ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Votre client vous règle sa course comme d'habitude. Vous, vous versez au confrère qui roule le prix de rétrocession que vous avez fixé, plus la commission. La différence reste chez vous, sans avoir pris le volant. C'est vous qui décidez de ce prix, course par course."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Comment être sûr que mon client sera bien pris en charge ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Le repreneur est un professionnel dont la carte VTC, l'assurance et la carte grise ont été contrôlées, et dont la note et l'historique sont visibles avant que vous acceptiez. Vous suivez le trajet en direct, et le paiement ne part qu'après votre confirmation."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Le téléchargement est-il vraiment gratuit ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Oui. L'application est gratuite, l'inscription aussi, et il n'y a ni abonnement ni engagement. Une commission n'est prélevée que sur les courses réellement cédées."
+            }
         }
     ]
 }
@@ -138,22 +162,125 @@
 <main id="main">
   <section class="hero">
     <div class="wrap">
-      <span class="eyebrow eyebrow--ride">Entre chauffeurs VTC</span>
-      <h1>Une course de trop, <mark>ou une heure creuse&nbsp;?</mark></h1>
+      <span class="eyebrow eyebrow--ride">Chauffeurs VTC</span>
+      <h1>La course que vous ne pouvez pas faire <mark>peut quand même vous payer</mark></h1>
       <p class="lede">
-        Vous êtes doublé sur une réservation et vous allez perdre la course.
-        Ailleurs, un confrère a un trou dans sa journée. ALLAMEO fait se
-        rencontrer les deux, avec l'argent bloqué avant le départ.
+        Vous encaissez votre client comme d'habitude. Un confrère vérifié roule à
+        votre place. Vous gardez la différence, sans prendre le volant, sans
+        brûler un litre de carburant. Téléchargement et inscription gratuits.
       </p>
       <div class="hero-actions">
-        <a class="btn" href="#telecharger">Télécharger l'application</a>
-        <a class="btn btn--ghost" href="#comment">Voir comment ça marche</a>
+        <a class="btn" href="#telecharger">Télécharger l'application — c'est gratuit</a>
+        <a class="btn btn--ghost" href="#gagner">Comment je gagne dessus</a>
       </div>
       <p class="trust">
-        <span>Montant bloqué avant le départ</span>
-        <span>Cartes pro vérifiées</span>
-        <span>Facture automatique</span>
+        <span>Inscription gratuite</span>
         <span>Sans abonnement</span>
+        <span>Cartes pro vérifiées</span>
+        <span>Argent bloqué avant le départ</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="gagner">
+    <div class="wrap">
+      <span class="eyebrow eyebrow--payment">Le principe</span>
+      <h2>Gagnez sur les courses <mark>que vous ne faites pas</mark></h2>
+      <p class="lede">
+        Une réservation que vous ne pouvez pas honorer, aujourd'hui, vous la
+        refusez : vous perdez la course, et souvent le client avec. Sur ALLAMEO,
+        vous la confiez à un confrère au prix que vous fixez. La différence
+        entre ce que votre client vous règle et ce que vous versez au repreneur
+        reste chez vous.
+      </p>
+
+      <div class="grid grid--3" style="margin-top:2.5rem">
+        <article class="neo card">
+          <span class="chip chip--payment">Vous fixez le prix</span>
+          <h3>C'est vous qui décidez de la marge</h3>
+          <p>
+            Vous proposez le montant de rétrocession que vous voulez, course par
+            course. Un confrère accepte, ou vous fait une contre-offre que vous
+            êtes libre de refuser.
+          </p>
+        </article>
+        <article class="neo card">
+          <span class="chip chip--ride">Zéro kilomètre</span>
+          <h3>Vous ne prenez pas le volant</h3>
+          <p>
+            Pas de carburant, pas d'usure, pas d'heures de conduite. La course
+            est faite, votre client est content, et vous étiez ailleurs.
+          </p>
+        </article>
+        <article class="neo card">
+          <span class="chip chip--group">Vous gardez le client</span>
+          <h3>Il ne sait même pas que vous étiez pris</h3>
+          <p>
+            Il est pris en charge à l'heure par un professionnel vérifié. Pour
+            lui, rien n'a changé — et il vous rappellera la prochaine fois.
+          </p>
+        </article>
+      </div>
+
+      <p class="vs-note">
+        La marge dépend du prix de rétrocession que vous fixez : c'est votre
+        décision, à chaque course. ALLAMEO ne prélève sa commission que sur les
+        courses réellement cédées.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--inset" id="confiance">
+    <div class="wrap">
+      <span class="eyebrow eyebrow--group">Tranquillité</span>
+      <h2>Votre client est <mark>entre de bonnes mains</mark></h2>
+      <p class="lede">
+        C'est la vraie question quand on confie une course : à qui ? Sur ALLAMEO,
+        vous ne confiez jamais un client à un pseudo dans un groupe de
+        messagerie.
+      </p>
+
+      <div class="grid grid--2" style="margin-top:2.5rem">
+        <article class="neo card">
+          <span class="chip chip--document">Documents contrôlés</span>
+          <h3>Carte VTC, assurance, carte grise</h3>
+          <p>
+            Chaque compte est adossé à une entreprise et à des pièces
+            professionnelles vérifiées. Un document arrivé à expiration bloque
+            l'accès aux courses, automatiquement.
+          </p>
+        </article>
+        <article class="neo card">
+          <span class="chip chip--reward">Notes et historique</span>
+          <h3>Vous voyez qui vous répond</h3>
+          <p>
+            Note, nombre de courses, ancienneté, annulations : tout est visible
+            avant d'accepter. Vous choisissez, vous n'encaissez pas le premier
+            venu.
+          </p>
+        </article>
+        <article class="neo card">
+          <span class="chip chip--ride">Suivi en direct</span>
+          <h3>Vous savez où en est votre course</h3>
+          <p>
+            Prise en charge, client à bord, arrivée : vous suivez le trajet et
+            vous pouvez rassurer votre client sans appeler personne.
+          </p>
+        </article>
+        <article class="neo card">
+          <span class="chip chip--dispute">Rien ne part sans vous</span>
+          <h3>L'argent reste bloqué si ça se passe mal</h3>
+          <p>
+            Vous confirmez la course avant que le paiement parte. En cas de
+            problème, un litige gèle les fonds le temps de l'arbitrage.
+          </p>
+        </article>
+      </div>
+
+      <p class="vs-note">
+        Et si vous préférez ne travailler qu'avec des gens que vous connaissez :
+        créez un groupe privé et n'y publiez qu'à eux. Votre cercle habituel,
+        avec le paiement dedans.
       </p>
     </div>
   </section>
@@ -271,11 +398,17 @@
   <section class="section section--alt" id="telecharger">
     <div class="wrap">
       <span class="eyebrow eyebrow--reward">L'application</span>
-      <h2>ALLAMEO Driver, <mark>dans votre poche</mark></h2>
+      <h2>C'est gratuit, <mark>et ça prend trois minutes</mark></h2>
       <p class="lede">
-        Gratuite, sans abonnement. L'inscription se fait avec votre SIRET et vos
-        documents professionnels.
+        Rien à payer pour s'inscrire, rien à payer chaque mois, aucun engagement.
+        Vous téléchargez, vous déposez votre SIRET et vos documents, et vous
+        voyez les courses de votre secteur le jour même.
       </p>
+      <div class="grid grid--3" style="margin:2.4rem 0 .6rem">
+        <article class="neo stat"><strong>0 €</strong><span>pour s'inscrire</span></article>
+        <article class="neo stat"><strong>0 €</strong><span>d'abonnement</span></article>
+        <article class="neo stat"><strong>0</strong><span>engagement</span></article>
+      </div>
       <div class="app-band">
         <div class="app-shots">
           <span class="shot" data-label="Accueil"></span>
@@ -327,6 +460,18 @@
           <summary>Puis-je ne céder mes courses qu&#039;à des chauffeurs que je connais ?</summary>
           <p>Oui. Chaque course part au choix à tous les chauffeurs, à un groupe privé que vous avez créé, ou à un seul chauffeur en particulier. Le choix se fait course par course.</p>
         </details>
+        <details class="neo feature feature--ride">
+          <summary>Comment est-ce que je gagne de l&#039;argent en cédant une course ?</summary>
+          <p>Votre client vous règle sa course comme d&#039;habitude. Vous, vous versez au confrère qui roule le prix de rétrocession que vous avez fixé, plus la commission. La différence reste chez vous, sans avoir pris le volant. C&#039;est vous qui décidez de ce prix, course par course.</p>
+        </details>
+        <details class="neo feature feature--ride">
+          <summary>Comment être sûr que mon client sera bien pris en charge ?</summary>
+          <p>Le repreneur est un professionnel dont la carte VTC, l&#039;assurance et la carte grise ont été contrôlées, et dont la note et l&#039;historique sont visibles avant que vous acceptiez. Vous suivez le trajet en direct, et le paiement ne part qu&#039;après votre confirmation.</p>
+        </details>
+        <details class="neo feature feature--ride">
+          <summary>Le téléchargement est-il vraiment gratuit ?</summary>
+          <p>Oui. L&#039;application est gratuite, l&#039;inscription aussi, et il n&#039;y a ni abonnement ni engagement. Une commission n&#039;est prélevée que sur les courses réellement cédées.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -334,8 +479,8 @@
   <section class="section section--inset">
     <div class="wrap">
       <div class="cta">
-        <h2>Prêt à ne plus perdre <mark>une seule course</mark>&nbsp;?</h2>
-        <p>L'inscription est gratuite et se fait dans l'application.</p>
+        <h2>Chaque course refusée <mark>est de l'argent laissé sur la table</mark></h2>
+        <p>Le téléchargement et l'inscription sont gratuits. Il n'y a aucune raison d'attendre.</p>
         <p style="margin-top:1.6rem">
           <a class="btn btn--ink" href="#telecharger">Télécharger ALLAMEO Driver</a>
         </p>
