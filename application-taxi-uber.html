@@ -30,104 +30,141 @@
 <link rel="stylesheet" href="style.css">
 
 <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Application de cession de courses VTC entre chauffeurs, complémentaire des plateformes",
-    "serviceType": "Place de marché de courses VTC entre professionnels",
-    "url": "https://allameo.fr/application-taxi-uber.html",
-    "provider": {
-        "@type": "Organization",
-        "name": "ALLAMEO",
-        "url": "https://allameo.com/"
-    },
-    "areaServed": {
-        "@type": "Country",
-        "name": "France"
-    },
-    "audience": {
-        "@type": "BusinessAudience",
-        "name": "Chauffeurs VTC"
-    },
-    "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Application de cession de courses VTC entre chauffeurs, complémentaire des plateformes",
-        "itemListElement": [
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "uber taxi application",
-                    "url": "https://allameo.fr/application-taxi-uber.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "uber course",
-                    "url": "https://allameo.fr/application-taxi-uber.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "appli uber taxi",
-                    "url": "https://allameo.fr/application-taxi-uber.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "application taxi uber",
-                    "url": "https://allameo.fr/application-taxi-uber.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "application uber chauffeur",
-                    "url": "https://allameo.fr/application-taxi-uber.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "uber application chauffeur",
-                    "url": "https://allameo.fr/application-taxi-uber.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "application chauffeur uber",
-                    "url": "https://allameo.fr/application-taxi-uber.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "application comme uber",
-                    "url": "https://allameo.fr/application-taxi-uber.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "heetch chauffeur",
-                    "url": "https://allameo.fr/application-taxi-uber.html"
-                }
-            }
+[
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "ALLAMEO Driver",
+        "description": "ALLAMEO ne remplace ni Uber ni Heetch : c'est l'application que vous ouvrez quand vous avez une course de trop. La différence de modèle, expliquée sans détour.",
+        "url": "https://allameo.fr/application-taxi-uber.html",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Place de marché de courses VTC entre professionnels",
+        "operatingSystem": "Android, iOS",
+        "inLanguage": "fr-FR",
+        "isAccessibleForFree": true,
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ALLAMEO",
+            "url": "https://allameo.com/"
+        },
+        "audience": {
+            "@type": "BusinessAudience",
+            "name": "Chauffeurs VTC"
+        },
+        "featureList": [
+            "Montant bloqué avant le départ",
+            "Cartes professionnelles VTC vérifiées",
+            "Assurance RC pro et carte grise contrôlées",
+            "Facture générée des deux côtés",
+            "Filtres par prix, rayon et catégorie de véhicule",
+            "Suivi du trajet en direct",
+            "Litige et arbitrage"
         ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Application de cession de courses VTC entre chauffeurs, complémentaire des plateformes",
+        "serviceType": "Place de marché de courses VTC entre professionnels",
+        "url": "https://allameo.fr/application-taxi-uber.html",
+        "provider": {
+            "@type": "Organization",
+            "name": "ALLAMEO",
+            "url": "https://allameo.com/"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "France"
+        },
+        "audience": {
+            "@type": "BusinessAudience",
+            "name": "Chauffeurs VTC"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Application de cession de courses VTC entre chauffeurs, complémentaire des plateformes",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "uber taxi application",
+                        "url": "https://allameo.fr/application-taxi-uber.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "uber course",
+                        "url": "https://allameo.fr/application-taxi-uber.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "appli uber taxi",
+                        "url": "https://allameo.fr/application-taxi-uber.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "application taxi uber",
+                        "url": "https://allameo.fr/application-taxi-uber.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "application uber chauffeur",
+                        "url": "https://allameo.fr/application-taxi-uber.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "uber application chauffeur",
+                        "url": "https://allameo.fr/application-taxi-uber.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "application chauffeur uber",
+                        "url": "https://allameo.fr/application-taxi-uber.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "application comme uber",
+                        "url": "https://allameo.fr/application-taxi-uber.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "heetch chauffeur",
+                        "url": "https://allameo.fr/application-taxi-uber.html"
+                    }
+                }
+            ]
+        }
     }
-}
+]
 </script>
 </head>
 <body>

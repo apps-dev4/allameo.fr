@@ -30,96 +30,133 @@
 <link rel="stylesheet" href="style.css">
 
 <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Application VTC de cession et de reprise de courses entre chauffeurs",
-    "serviceType": "Application mobile pour chauffeurs VTC professionnels",
-    "url": "https://allameo.fr/application-chauffeur.html",
-    "provider": {
-        "@type": "Organization",
-        "name": "ALLAMEO",
-        "url": "https://allameo.com/"
-    },
-    "areaServed": {
-        "@type": "Country",
-        "name": "France"
-    },
-    "audience": {
-        "@type": "BusinessAudience",
-        "name": "Chauffeurs VTC"
-    },
-    "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Application VTC de cession et de reprise de courses entre chauffeurs",
-        "itemListElement": [
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "application vtc",
-                    "url": "https://allameo.fr/application-chauffeur.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "vtc application",
-                    "url": "https://allameo.fr/application-chauffeur.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "appli vtc",
-                    "url": "https://allameo.fr/application-chauffeur.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "applis vtc",
-                    "url": "https://allameo.fr/application-chauffeur.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "application chauffeur",
-                    "url": "https://allameo.fr/application-chauffeur.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "app chauffeur",
-                    "url": "https://allameo.fr/application-chauffeur.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "application chauffeur vtc",
-                    "url": "https://allameo.fr/application-chauffeur.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "application pour chauffeur vtc",
-                    "url": "https://allameo.fr/application-chauffeur.html"
-                }
-            }
+[
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "ALLAMEO Driver",
+        "description": "L'application VTC qui fait circuler les courses entre chauffeurs vérifiés : céder celle qu'on ne peut pas honorer, reprendre celle d'un confrère, montant bloqué avant le départ.",
+        "url": "https://allameo.fr/application-chauffeur.html",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Place de marché de courses VTC entre professionnels",
+        "operatingSystem": "Android, iOS",
+        "inLanguage": "fr-FR",
+        "isAccessibleForFree": true,
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ALLAMEO",
+            "url": "https://allameo.com/"
+        },
+        "audience": {
+            "@type": "BusinessAudience",
+            "name": "Chauffeurs VTC"
+        },
+        "featureList": [
+            "Montant bloqué avant le départ",
+            "Cartes professionnelles VTC vérifiées",
+            "Assurance RC pro et carte grise contrôlées",
+            "Facture générée des deux côtés",
+            "Filtres par prix, rayon et catégorie de véhicule",
+            "Suivi du trajet en direct",
+            "Litige et arbitrage"
         ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Application VTC de cession et de reprise de courses entre chauffeurs",
+        "serviceType": "Application mobile pour chauffeurs VTC professionnels",
+        "url": "https://allameo.fr/application-chauffeur.html",
+        "provider": {
+            "@type": "Organization",
+            "name": "ALLAMEO",
+            "url": "https://allameo.com/"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "France"
+        },
+        "audience": {
+            "@type": "BusinessAudience",
+            "name": "Chauffeurs VTC"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Application VTC de cession et de reprise de courses entre chauffeurs",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "application vtc",
+                        "url": "https://allameo.fr/application-chauffeur.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "vtc application",
+                        "url": "https://allameo.fr/application-chauffeur.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "appli vtc",
+                        "url": "https://allameo.fr/application-chauffeur.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "applis vtc",
+                        "url": "https://allameo.fr/application-chauffeur.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "application chauffeur",
+                        "url": "https://allameo.fr/application-chauffeur.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "app chauffeur",
+                        "url": "https://allameo.fr/application-chauffeur.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "application chauffeur vtc",
+                        "url": "https://allameo.fr/application-chauffeur.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "application pour chauffeur vtc",
+                        "url": "https://allameo.fr/application-chauffeur.html"
+                    }
+                }
+            ]
+        }
     }
-}
+]
 </script>
 </head>
 <body>

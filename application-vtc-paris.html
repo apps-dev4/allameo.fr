@@ -30,127 +30,165 @@
 <link rel="stylesheet" href="style.css">
 
 <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Revendre et racheter des courses VTC à Paris",
-    "serviceType": "Place de marché de courses VTC entre professionnels",
-    "provider": {
-        "@type": "Organization",
-        "name": "ALLAMEO",
-        "url": "https://allameo.com/"
-    },
-    "areaServed": {
-        "@type": "City",
-        "name": "Paris"
-    },
-    "audience": {
-        "@type": "BusinessAudience",
-        "name": "Chauffeurs VTC"
-    },
-    "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Nos services VTC à Paris",
-        "itemListElement": [
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "revendre une course VTC à Paris",
-                    "url": "https://allameo.fr/application-vtc-paris.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "racheter une course VTC à Paris",
-                    "url": "https://allameo.fr/application-vtc-paris.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "céder une course VTC à un confrère à Paris",
-                    "url": "https://allameo.fr/application-vtc-paris.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "reprendre une course VTC à Paris",
-                    "url": "https://allameo.fr/application-vtc-paris.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "application VTC Paris",
-                    "url": "https://allameo.fr/application-vtc-paris.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "bourse de courses VTC Paris",
-                    "url": "https://allameo.fr/application-vtc-paris.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "sous-traitance VTC Paris",
-                    "url": "https://allameo.fr/application-vtc-paris.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "rétrocession de course VTC à Paris",
-                    "url": "https://allameo.fr/application-vtc-paris.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "trouver des courses VTC à Paris",
-                    "url": "https://allameo.fr/application-vtc-paris.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "plateforme de courses entre chauffeurs VTC à Paris",
-                    "url": "https://allameo.fr/application-vtc-paris.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "déléguer une course VTC à Paris",
-                    "url": "https://allameo.fr/application-vtc-paris.html"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "application VTC dans toute la France",
-                    "url": "https://allameo.fr/villes.html"
-                }
-            }
+[
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "ALLAMEO Driver",
+        "description": "Chauffeurs VTC de Paris : cédez les courses que vous ne pouvez pas honorer et reprenez celles de vos confrères. Montant bloqué avant le départ, cartes professionnelles vérifiées.",
+        "url": "https://allameo.fr/application-vtc-paris.html",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Place de marché de courses VTC entre professionnels",
+        "operatingSystem": "Android, iOS",
+        "inLanguage": "fr-FR",
+        "isAccessibleForFree": true,
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ALLAMEO",
+            "url": "https://allameo.com/"
+        },
+        "audience": {
+            "@type": "BusinessAudience",
+            "name": "Chauffeurs VTC"
+        },
+        "featureList": [
+            "Montant bloqué avant le départ",
+            "Cartes professionnelles VTC vérifiées",
+            "Assurance RC pro et carte grise contrôlées",
+            "Facture générée des deux côtés",
+            "Filtres par prix, rayon et catégorie de véhicule",
+            "Suivi du trajet en direct",
+            "Litige et arbitrage"
         ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Revendre et racheter des courses VTC à Paris",
+        "serviceType": "Place de marché de courses VTC entre professionnels",
+        "url": "https://allameo.fr/application-vtc-paris.html",
+        "provider": {
+            "@type": "Organization",
+            "name": "ALLAMEO",
+            "url": "https://allameo.com/"
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Paris"
+        },
+        "audience": {
+            "@type": "BusinessAudience",
+            "name": "Chauffeurs VTC"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Nos services VTC à Paris",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "revendre une course VTC à Paris",
+                        "url": "https://allameo.fr/application-vtc-paris.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "racheter une course VTC à Paris",
+                        "url": "https://allameo.fr/application-vtc-paris.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "céder une course VTC à un confrère à Paris",
+                        "url": "https://allameo.fr/application-vtc-paris.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "reprendre une course VTC à Paris",
+                        "url": "https://allameo.fr/application-vtc-paris.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "application VTC Paris",
+                        "url": "https://allameo.fr/application-vtc-paris.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "bourse de courses VTC Paris",
+                        "url": "https://allameo.fr/application-vtc-paris.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "sous-traitance VTC Paris",
+                        "url": "https://allameo.fr/application-vtc-paris.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "rétrocession de course VTC à Paris",
+                        "url": "https://allameo.fr/application-vtc-paris.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "trouver des courses VTC à Paris",
+                        "url": "https://allameo.fr/application-vtc-paris.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "plateforme de courses entre chauffeurs VTC à Paris",
+                        "url": "https://allameo.fr/application-vtc-paris.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "déléguer une course VTC à Paris",
+                        "url": "https://allameo.fr/application-vtc-paris.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "application VTC dans toute la France",
+                        "url": "https://allameo.fr/villes.html"
+                    }
+                }
+            ]
+        }
     }
-}
+]
 </script>
 </head>
 <body>
