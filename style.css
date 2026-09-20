@@ -680,7 +680,7 @@ h1 mark, h2 mark, .mark {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr repeat(4, 1fr);
+  grid-template-columns: 1.4fr repeat(3, 1fr);
   gap: 2rem;
 }
 .footer-brand p { color: #B8B8B8; font-size: .95rem; max-width: 34ch; }
