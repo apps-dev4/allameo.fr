@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calcul rétrocession VTC - Pourcentage rétrocession VTC</title>
+<meta name="description" content="Calculez une rétrocession de course VTC : prix client, pourcentage, péages et approche. Vous obtenez le net du repreneur et ce qui reste au cédant.">
+<meta name="theme-color" content="#86E6D6">
+<link rel="canonical" href="https://allameo.fr/calcul-retrocession-vtc.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculateur de rétrocession VTC : net du repreneur et part du cédant — ALLAMEO">
+<meta property="og:description" content="Calculez une rétrocession de course VTC : prix client, pourcentage, péages et approche. Vous obtenez le net du repreneur et ce qui reste au cédant.">
+<meta property="og:url" content="https://allameo.fr/calcul-retrocession-vtc.html">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="ALLAMEO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calculateur de rétrocession VTC : net du repreneur et part du cédant — ALLAMEO">
+<meta name="twitter:description" content="Calculez une rétrocession de course VTC : prix client, pourcentage, péages et approche. Vous obtenez le net du repreneur et ce qui reste au cédant.">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png">
+<link rel="apple-touch-icon" href="favicon-256x256.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+[
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "ALLAMEO Driver",
+        "description": "Calculez une rétrocession de course VTC : prix client, pourcentage, péages et approche. Vous obtenez le net du repreneur et ce qui reste au cédant.",
+        "url": "https://allameo.fr/calcul-retrocession-vtc.html",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Place de marché de courses VTC entre professionnels",
+        "operatingSystem": "Android, iOS",
+        "inLanguage": "fr-FR",
+        "isAccessibleForFree": true,
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ALLAMEO",
+            "url": "https://allameo.com/"
+        },
+        "audience": {
+            "@type": "BusinessAudience",
+            "name": "Chauffeurs VTC"
+        },
+        "featureList": [
+            "Montant bloqué avant le départ",
+            "Cartes professionnelles VTC vérifiées",
+            "Assurance RC pro et carte grise contrôlées",
+            "Facture générée des deux côtés",
+            "Filtres par prix, rayon et catégorie de véhicule",
+            "Suivi du trajet en direct",
+            "Litige et arbitrage"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Calculateur de rétrocession de course VTC",
+        "serviceType": "Outil de calcul pour chauffeurs VTC",
+        "url": "https://allameo.fr/calcul-retrocession-vtc.html",
+        "provider": {
+            "@type": "Organization",
+            "name": "ALLAMEO",
+            "url": "https://allameo.com/"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "France"
+        },
+        "audience": {
+            "@type": "BusinessAudience",
+            "name": "Chauffeurs VTC"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Calculateur de rétrocession de course VTC",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "calcul rétrocession vtc",
+                        "url": "https://allameo.fr/calcul-retrocession-vtc.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "pourcentage rétrocession vtc",
+                        "url": "https://allameo.fr/calcul-retrocession-vtc.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "calculateur rétrocession vtc",
+                        "url": "https://allameo.fr/calcul-retrocession-vtc.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "rétrocession vtc",
+                        "url": "https://allameo.fr/calcul-retrocession-vtc.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "simulateur rétrocession vtc",
+                        "url": "https://allameo.fr/calcul-retrocession-vtc.html"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "calcul rétrocession course vtc",
+                        "url": "https://allameo.fr/calcul-retrocession-vtc.html"
+                    }
+                }
+            ]
+        }
+    }
+]
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="ALLAMEO, accueil">
+      <img src="logo-allameo.webp" alt="calcul rétrocession vtc" width="900" height="331">
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html#comment">Comment ça marche</a></li>
+        <li><a href="villes.html">Villes</a></li>
+        <li><a href="index.html#ceder">Céder une course</a></li>
+        <li><a href="index.html#reprendre">Reprendre une course</a></li>
+        <li><a href="index.html#questions">Questions</a></li>
+        <li><a class="btn" href="index.html#telecharger">Lancement</a></li>
+      </ul>
+    </nav>
+
+    <button class="burger" id="burger" type="button"
+            aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<aside class="drawer" id="drawer" aria-label="Navigation mobile">
+  <div class="drawer-head">
+    <span class="logo"><img src="logo-allameo.webp" alt="calcul rétrocession vtc" width="900" height="331"></span>
+    <button class="drawer-close" id="drawerClose" type="button" aria-label="Fermer le menu">&times;</button>
+  </div>
+
+  <nav class="drawer-nav">
+    <a href="index.html#comment">Comment ça marche</a>
+    <a href="villes.html">Toutes les villes</a>
+    <a href="index.html#ceder">Céder une course</a>
+    <a href="index.html#reprendre">Reprendre une course</a>
+    <a href="index.html#questions">Questions fréquentes</a>
+    <a href="https://allameo.com">Le site institutionnel</a>
+  </nav>
+
+  <div class="drawer-cta">
+    <a class="btn" href="index.html#telecharger">Lancement de l&#039;application</a>
+  </div>
+</aside>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+<main id="main">
+  <section class="hero hero--page">
+    <div class="wrap">
+      <nav class="fil" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a> <span>·</span> Calcul de rétrocession
+      </nav>
+      <span class="eyebrow eyebrow--payment">Outil gratuit</span>
+      <h1>Calcul rétrocession VTC <mark>Pourcentage rétrocession VTC</mark></h1>
+      <p class="lede">Vous cédez une course à 80 € à 75 %, le confrère avance 12 € de péage et vous lui accordez 10 € d'approche. Qui touche quoi&nbsp;? La réponse en trois secondes, au lieu d'un calcul de tête au feu rouge.</p>
+      <p class="trust" style="justify-content:flex-start">
+        <span>Sans inscription</span>
+        <span>Rien n'est enregistré</span>
+        <span>Fonctionne hors ligne</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="outil">
+        <div class="neo">
+          <h3>La course</h3>
+          <form class="form form--serre" id="calc" autocomplete="off">
+            <label>
+              <span>Prix payé par le client (€)</span>
+              <input type="number" id="prix" value="80" min="0" step="0.01" inputmode="decimal">
+            </label>
+            <label>
+              <span>Pourcentage de rétrocession (%)</span>
+              <input type="number" id="pct" value="75" min="0" max="100" step="1" inputmode="decimal">
+            </label>
+            <div class="form--duo">
+              <label>
+                <span>Péages avancés (€)</span>
+                <input type="number" id="peages" value="0" min="0" step="0.01" inputmode="decimal">
+              </label>
+              <label>
+                <span>Forfait d'approche (€)</span>
+                <input type="number" id="approche" value="0" min="0" step="0.01" inputmode="decimal">
+              </label>
+            </div>
+          </form>
+          <p class="res-note">Les péages et l'approche sont ajoutés au net du repreneur : ce sont des frais qu'il a avancés ou engagés, pas une part de la course.</p>
+        </div>
+
+        <div class="neo">
+          <h3>Le partage</h3>
+          <div class="res-ligne"><span>Prix de la course</span><b id="r-prix">80,00 €</b></div>
+          <div class="res-ligne"><span>Rétrocession <em id="r-pct" style="font-style:normal;color:var(--text-hint)">(75 %)</em></span><b id="r-retro">60,00 €</b></div>
+          <div class="res-ligne"><span>Péages remboursés</span><b id="r-peages">0,00 €</b></div>
+          <div class="res-ligne"><span>Forfait d'approche</span><b id="r-approche">0,00 €</b></div>
+
+          <div class="res-bloc">
+            <small>Net pour le repreneur</small>
+            <span class="v" id="r-net">60,00 €</span>
+            <em id="r-net-detail">dont 60,00 € de course</em>
+          </div>
+          <div class="res-bloc">
+            <small>Reste au cédant</small>
+            <span class="v" id="r-reste">20,00 €</span>
+            <em id="r-reste-detail">soit 25 % de la course, sans prendre le volant</em>
+          </div>
+          <div id="r-commission" hidden></div>
+          <p class="res-note" id="r-alerte" hidden></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--inset">
+    <div class="wrap">
+      <span class="eyebrow eyebrow--document">La méthode</span>
+      <h2>Comment se calcule <mark>une rétrocession</mark></h2>
+      <p class="lede">Une rétrocession n'est pas un partage de bénéfice : c'est le prix auquel vous achetez ou vendez une prestation à un confrère. Le calcul tient en quatre lignes.</p>
+      <div class="etapes" style="margin-top:2.5rem">
+        <div class="etape"><span class="no">1</span><div>
+          <h3>Le prix payé par le client</h3>
+          <p>Le montant de la course tel que votre client la règle. C'est la base du calcul, et elle ne change pas parce que vous confiez la course à quelqu'un d'autre.</p>
+        </div></div>
+        <div class="etape"><span class="no">2</span><div>
+          <h3>Le pourcentage de rétrocession</h3>
+          <p>La part qui revient au chauffeur qui roule. C'est le seul point réellement négociable, et il se fixe avant que la course parte, pas après.</p>
+        </div></div>
+        <div class="etape"><span class="no">3</span><div>
+          <h3>Les péages et frais avancés</h3>
+          <p>Le repreneur a sorti l'argent de sa poche. Ces frais se remboursent en plus de la rétrocession, sinon ils viennent amputer sa part.</p>
+        </div></div>
+        <div class="etape"><span class="no">4</span><div>
+          <h3>L'approche</h3>
+          <p>Les kilomètres faits à vide pour rejoindre le point de départ. Sur une course éloignée, ne pas les compter revient à demander au confrère de travailler gratuitement une demi-heure.</p>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow eyebrow--payment">La vraie question</span>
+      <h2>Quel pourcentage <mark>pratiquer</mark></h2>
+      <p class="lede">
+        Il n'existe aucun taux réglementaire : la rétrocession est un prix libre
+        entre deux entreprises indépendantes. Dans les faits, l'essentiel des
+        échanges entre chauffeurs se situe entre <b>70 % et 80 %</b> pour celui
+        qui roule. En dessous de 70 %, le repreneur travaille souvent à perte une
+        fois le carburant et l'approche déduits ; au-dessus de 80 %, le cédant n'a
+        plus d'intérêt à céder plutôt qu'à annuler.
+      </p>
+      <div class="grid grid--3" style="margin-top:2.5rem">
+        <article class="neo card">
+          <h3>Ce qui fait monter</h3>
+          <p>Une course longue, un départ éloigné, un horaire difficile, une catégorie de véhicule exigeante, un délai court.</p>
+        </article>
+        <article class="neo card">
+          <h3>Ce qui fait baisser</h3>
+          <p>Une course qui tombe sur le trajet du repreneur, un départ à deux minutes de sa position, une réservation calée longtemps à l'avance.</p>
+        </article>
+        <article class="neo card">
+          <h3>Ce qui ne se négocie pas</h3>
+          <p>Les péages. Ils ne sont ni une marge ni un geste commercial : ce sont des frais avancés, ils se remboursent à l'euro près.</p>
+        </article>
+      </div>
+      <p class="res-note" style="margin-top:2rem">
+        Ces fourchettes décrivent des usages observés entre chauffeurs, pas une
+        règle opposable. Chacun reste libre de fixer ses prix : c'est même une
+        condition de la sous-traitance régulière entre indépendants.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow eyebrow--document">Une fois le prix fixé</span>
+      <h2>Le calcul ne suffit pas, <mark>il faut la trace</mark></h2>
+      <p class="lede">
+        Un pourcentage convenu oralement ne vaut rien devant un comptable ni
+        devant un litige. La rétrocession doit donner lieu à une facture entre
+        les deux entreprises, et la course à une confirmation écrite. Les deux
+        se génèrent ici, gratuitement.
+      </p>
+      <p class="suite">
+        <a class="btn btn--ghost" href="modele-facture-retrocession-vtc.html">Modèle de facture de rétrocession</a>
+        <a class="btn btn--ghost" href="contrat-sous-traitance-course-vtc.html">Contrat pour une course</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap">
+      <div class="cta">
+        <h2>Et si le montant était déjà bloqué&nbsp;?</h2>
+        <p>Sur ALLAMEO, le prix de rétrocession est déposé au moment où la course est publiée. Le repreneur voit son net avant d'accepter, le cédant n'a personne à relancer.</p>
+        <p style="margin-top:1.6rem">
+          <a class="btn btn--ink" href="https://www.instagram.com/allameo.app" target="_blank" rel="noopener">Nous suivre sur Instagram</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+<script>
+(function () {
+  // Taux de commission ALLAMEO, en pourcentage (ex. 12 pour 12 %).
+  // Laisser a null tant que le taux n'est pas arrete : le bloc reste masque.
+  var TAUX_COMMISSION = null;
+
+  var champs = ['prix', 'pct', 'peages', 'approche'];
+  if (!document.getElementById('calc')) { return; }
+
+  var euro = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' });
+
+  function lire(id) {
+    var el = document.getElementById(id);
+    var n = parseFloat(String(el.value).replace(',', '.'));
+    return isFinite(n) ? n : 0;
+  }
+  function ecrire(id, texte) {
+    var el = document.getElementById(id);
+    if (el) { el.textContent = texte; }
+  }
+
+  function calculer() {
+    var prix = Math.max(0, lire('prix'));
+    var pct = Math.min(100, Math.max(0, lire('pct')));
+    var peages = Math.max(0, lire('peages'));
+    var approche = Math.max(0, lire('approche'));
+
+    var retro = prix * pct / 100;
+    var net = retro + peages + approche;
+    var reste = prix - net;
+
+    ecrire('r-prix', euro.format(prix));
+    ecrire('r-pct', '(' + pct.toLocaleString('fr-FR') + ' %)');
+    ecrire('r-retro', euro.format(retro));
+    ecrire('r-peages', euro.format(peages));
+    ecrire('r-approche', euro.format(approche));
+    ecrire('r-net', euro.format(net));
+
+    var detail = 'dont ' + euro.format(retro) + ' de course';
+    if (peages > 0) { detail += ', ' + euro.format(peages) + ' de péages'; }
+    if (approche > 0) { detail += ', ' + euro.format(approche) + ' d\'approche'; }
+    ecrire('r-net-detail', detail);
+
+    ecrire('r-reste', euro.format(reste));
+    var part = prix > 0 ? (reste / prix) * 100 : 0;
+    ecrire('r-reste-detail',
+      reste >= 0
+        ? 'soit ' + part.toFixed(1).replace('.', ',') + ' % de la course, sans prendre le volant'
+        : 'la course vous coûte plus qu\'elle ne rapporte');
+
+    var alerte = document.getElementById('r-alerte');
+    if (reste < 0) {
+      alerte.textContent = 'Attention : rétrocession, péages et approche dépassent le prix payé par le client. '
+        + 'Vous perdez ' + euro.format(Math.abs(reste)) + ' sur cette course.';
+      alerte.hidden = false;
+    } else {
+      alerte.hidden = true;
+    }
+
+    var bloc = document.getElementById('r-commission');
+    if (TAUX_COMMISSION !== null && prix > 0) {
+      var com = retro * TAUX_COMMISSION / 100;
+      bloc.className = 'res-bloc';
+      bloc.innerHTML = '<small>Commission ALLAMEO</small>'
+        + '<span class="v">' + euro.format(com) + '</span>'
+        + '<em>' + TAUX_COMMISSION.toLocaleString('fr-FR') + ' % de la rétrocession, '
+        + 'prélevée uniquement si la course est effectivement cédée</em>';
+      bloc.hidden = false;
+    } else {
+      bloc.hidden = true;
+    }
+  }
+
+  champs.forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) { el.addEventListener('input', calculer); }
+  });
+  calculer();
+})();
+</script>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo"><img src="logo-allameo.webp" alt="calcul rétrocession vtc" width="900" height="331"></span>
+        <p>La place de marché des courses VTC entre professionnels. Céder une course qu&#039;on ne peut pas honorer, reprendre celle d&#039;un confrère.</p>
+        <div class="footer-rs">
+          <a href="https://www.instagram.com/allameo.app" target="_blank" rel="noopener" aria-label="ALLAMEO sur Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.22 1 .48 1.4.9.4.4.68.8.9 1.4.17.4.37 1 .42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.05 1.2-.25 1.8-.42 2.2-.22.6-.5 1-.9 1.4-.4.4-.8.68-1.4.9-.4.17-1 .37-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.05-1.8-.25-2.2-.42-.6-.22-1-.5-1.4-.9-.4-.4-.68-.8-.9-1.4-.17-.4-.37-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.2.25-1.8.42-2.2.22-.6.5-1 .9-1.4.4-.4.8-.68 1.4-.9.4-.17 1-.37 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.9c-3.1 0-3.5 0-4.8.07-1.1.05-1.7.24-2.1.4-.5.2-.9.44-1.3.84-.4.4-.64.8-.84 1.3-.16.4-.35 1-.4 2.1-.06 1.3-.07 1.7-.07 4.8s0 3.5.07 4.8c.05 1.1.24 1.7.4 2.1.2.5.44.9.84 1.3.4.4.8.64 1.3.84.4.16 1 .35 2.1.4 1.3.06 1.7.07 4.8.07s3.5 0 4.8-.07c1.1-.05 1.7-.24 2.1-.4.5-.2.9-.44 1.3-.84.4-.4.64-.8.84-1.3.16-.4.35-1 .4-2.1.06-1.3.07-1.7.07-4.8s0-3.5-.07-4.8c-.05-1.1-.24-1.7-.4-2.1-.2-.5-.44-.9-.84-1.3-.4-.4-.8-.64-1.3-.84-.4-.16-1-.35-2.1-.4-1.3-.06-1.7-.07-4.8-.07zm0 3.2a4.7 4.7 0 110 9.4 4.7 4.7 0 010-9.4zm0 1.9a2.8 2.8 0 100 5.6 2.8 2.8 0 000-5.6zm6-2.1a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z"/></svg></a>
+          <a href="https://www.facebook.com/allameo.driver" target="_blank" rel="noopener" aria-label="ALLAMEO sur Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg></a>
+          <a href="https://www.tiktok.com/@allameo.driver" target="_blank" rel="noopener" aria-label="ALLAMEO sur TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 2h-3.1v14.1a2.6 2.6 0 11-2.6-2.6c.2 0 .5 0 .7.1v-3.1a6 6 0 00-.7 0 5.7 5.7 0 105.7 5.7V9.4a7 7 0 004.1 1.3V7.6a4 4 0 01-3.6-3.4c-.3-.6-.5-1.3-.5-2.2z"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Outils</h4>
+        <ul>
+          <li><a href="calcul-retrocession-vtc.html">Calcul de rétrocession</a></li>
+          <li><a href="modele-facture-retrocession-vtc.html">Facture de rétrocession</a></li>
+          <li><a href="contrat-sous-traitance-course-vtc.html">Contrat pour une course</a></li>
+          <li><a href="verifier-carte-vtc.html">Vérifier un confrère</a></li>
+          <li><a href="index.html#questions">Questions fréquentes</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Guides</h4>
+        <ul>
+          <li><a href="application-chauffeur.html">L&#039;application VTC</a></li>
+          <li><a href="groupe-whatsapp-vtc.html">Groupes WhatsApp et Telegram</a></li>
+          <li><a href="application-taxi-uber.html">Une application comme Uber</a></li>
+          <li><a href="application-indispensable-vtc.html">Applications indispensables</a></li>
+          <li><a href="devenir-chauffeur-vtc.html">Devenir chauffeur VTC</a></li>
+          <li><a href="vtc-ou-taxi.html">VTC ou taxi</a></li>
+          <li><a href="regles-vehicule-vtc.html">Règles véhicule VTC</a></li>
+          <li><a href="meilleurs-vehicules-vtc.html">Meilleurs véhicules</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Villes</h4>
+        <ul>
+          <li><a href="application-vtc-paris.html">Paris</a></li>
+          <li><a href="application-vtc-lyon.html">Lyon</a></li>
+          <li><a href="application-vtc-marseille.html">Marseille</a></li>
+          <li><a href="villes.html">Toutes les villes</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>ALLAMEO</h4>
+        <ul>
+          <li><a href="https://allameo.com">Le site institutionnel</a></li>
+          <li><a href="https://allameo.com/paiement.html">Paiement et commission</a></li>
+          <li><a href="https://allameo.com/securite.html">Sécurité</a></li>
+          <li><a href="mailto:contact@allameo.com">Nous écrire</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="legal">
+      <span>&copy; 2026 ALLAMEO</span>
+      <span><a href="https://allameo.com/cadre-legal.html">Cadre légal</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Revenir en haut de page">&uarr;</button>
+
+<script src="site.js" defer></script>
+</body>
+</html>
