@@ -1252,3 +1252,8 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   letter-spacing: 0;
   white-space: nowrap;
 }
+
+/* bouton Lancement : jaune signature, distinct des autres appels a l'action */
+.btn--lancement { background: var(--hero-bg); }
+.btn--lancement:hover { background: var(--subject-reward); }
+.btn--lancement .cd-mini { color: var(--hero-bg); }
