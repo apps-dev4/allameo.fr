@@ -151,4 +151,32 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
+
+  /* ---- compte a rebours compact (en-tete et menu mobile) ---- */
+  var pastilles = document.querySelectorAll('.cd-mini');
+  if (pastilles.length) {
+    var ouverture = new Date('2027-01-01T00:00:00+01:00').getTime();
+
+    var majPastilles = function () {
+      var reste = ouverture - Date.now();
+      var texte;
+      if (reste <= 0) {
+        texte = 'ouvert';
+      } else {
+        var jours = Math.floor(reste / 86400000);
+        if (jours >= 1) {
+          texte = 'J-' + jours;
+        } else {
+          var heures = Math.floor(reste / 3600000);
+          texte = heures >= 1 ? 'H-' + heures : 'imminent';
+        }
+      }
+      for (var i = 0; i < pastilles.length; i++) {
+        pastilles[i].textContent = texte;
+      }
+    };
+
+    majPastilles();
+    setInterval(majPastilles, 60000);
+  }
 })();
