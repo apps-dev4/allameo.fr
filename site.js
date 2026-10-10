@@ -179,4 +179,115 @@
     majPastilles();
     setInterval(majPastilles, 60000);
   }
+
+  /* ---- demonstration : trois ecrans qui se remplissent ---- */
+  var demo = document.getElementById('demo');
+  if (demo) {
+    var tels = demo.querySelectorAll('.tel');
+    var minuteries = [];
+    var horloge = 0;
+
+    /* planifie une action a un instant absolu depuis le debut du cycle */
+    var plus = function (ms, action) {
+      horloge += ms;
+      minuteries.push(setTimeout(action, horloge));
+    };
+
+    var actif = function (n) {
+      for (var i = 0; i < tels.length; i++) {
+        tels[i].classList.toggle('est-actif', i === n);
+      }
+    };
+
+    var saisir = function (champ, vitesse) {
+      var texte = champ.getAttribute('data-saisie') || '';
+      plus(0, function () { champ.classList.add('saisit'); });
+      for (var i = 1; i <= texte.length; i++) {
+        (function (n) {
+          plus(vitesse, function () { champ.textContent = texte.slice(0, n); });
+        })(i);
+      }
+      plus(120, function () { champ.classList.remove('saisit'); });
+    };
+
+    var montrer = function (el, delai) {
+      plus(delai, function () { if (el) { el.classList.add('visible'); } });
+    };
+
+    var appuyer = function (bouton, delai) {
+      plus(delai, function () { if (bouton) { bouton.classList.add('appuye'); } });
+      plus(220, function () { if (bouton) { bouton.classList.remove('appuye'); } });
+    };
+
+    var remettre = function () {
+      for (var i = 0; i < minuteries.length; i++) { clearTimeout(minuteries[i]); }
+      minuteries = [];
+      horloge = 0;
+      var champs = demo.querySelectorAll('[data-saisie]');
+      for (var c = 0; c < champs.length; c++) {
+        champs[c].textContent = '';
+        champs[c].classList.remove('saisit');
+      }
+      var masques = demo.querySelectorAll('[data-carte], [data-ligne], [data-total], [data-note]');
+      for (var m = 0; m < masques.length; m++) { masques[m].classList.remove('visible'); }
+      var boutons = demo.querySelectorAll('[data-bouton]');
+      for (var b = 0; b < boutons.length; b++) { boutons[b].classList.remove('appuye'); }
+    };
+
+    /* etat final, sans animation : mouvement reduit ou onglet inactif */
+    var figer = function () {
+      remettre();
+      var champs = demo.querySelectorAll('[data-saisie]');
+      for (var c = 0; c < champs.length; c++) {
+        champs[c].textContent = champs[c].getAttribute('data-saisie');
+      }
+      var masques = demo.querySelectorAll('[data-carte], [data-ligne], [data-total], [data-note]');
+      for (var m = 0; m < masques.length; m++) { masques[m].classList.add('visible'); }
+      for (var t = 0; t < tels.length; t++) { tels[t].classList.add('est-actif'); }
+    };
+
+    var cycle = function () {
+      remettre();
+
+      /* ecran 1 : on publie la course */
+      plus(300, function () { actif(0); });
+      var champs1 = tels[0].querySelectorAll('[data-saisie]');
+      for (var i = 0; i < champs1.length; i++) {
+        plus(190, function () {});
+        saisir(champs1[i], 23);
+      }
+      appuyer(tels[0].querySelector('[data-bouton]'), 450);
+
+      /* ecran 2 : un confrere verifie la reprend */
+      plus(500, function () { actif(1); });
+      montrer(tels[1].querySelector('[data-carte]'), 280);
+      var lignes2 = tels[1].querySelectorAll('[data-ligne]');
+      for (var j = 0; j < lignes2.length; j++) { montrer(lignes2[j], 170); }
+      appuyer(tels[1].querySelector('[data-bouton]'), 520);
+
+      /* ecran 3 : le partage */
+      plus(500, function () { actif(2); });
+      var lignes3 = tels[2].querySelectorAll('[data-ligne]');
+      for (var k = 0; k < lignes3.length; k++) { montrer(lignes3[k], 230); }
+      montrer(tels[2].querySelector('[data-total]'), 330);
+      montrer(tels[2].querySelector('[data-note]'), 280);
+
+      /* respiration, puis on recommence */
+      plus(2600, cycle);
+    };
+
+    if (reduceMotion) {
+      figer();
+    } else {
+      cycle();
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+          for (var i = 0; i < minuteries.length; i++) { clearTimeout(minuteries[i]); }
+          minuteries = [];
+        } else {
+          cycle();
+        }
+      });
+    }
+  }
 })();

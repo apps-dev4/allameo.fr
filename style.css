@@ -521,28 +521,6 @@ h1 mark, h2 mark, .mark {
   box-shadow: var(--shadow-lg);
 }
 
-.app-shots { display: flex; justify-content: center; align-items: flex-start; gap: 1rem; }
-.shot {
-  position: relative;
-  flex: 1 1 0;
-  max-width: 168px;
-  aspect-ratio: 9 / 19;
-  border: var(--neo-border) dashed var(--stroke);
-  border-radius: 22px;
-  background: var(--surface-inset);
-}
-.shot:nth-child(2) { transform: translateY(-14px); }
-.shot::after {
-  content: attr(data-label);
-  position: absolute;
-  inset: auto 0 1rem;
-  text-align: center;
-  font-size: .78rem;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--text-hint);
-}
 
 .app-claim { font-size: 1.1rem; font-weight: 600; color: var(--text-strong); }
 .stores { display: flex; flex-wrap: wrap; gap: .9rem; margin: 1.4rem 0 1.1rem; }
@@ -799,8 +777,8 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   .feature p { padding: 0 1.1rem 1.1rem; }
   .fam-block + .fam-block { margin-top: 2.2rem; }
   .app-band { grid-template-columns: 1fr; }
-  .app-shots { order: 2; }
-  .shot:nth-child(2) { transform: none; }
+  .demo { order: 2; }
+  .tel.est-actif { transform: translateY(-8px); }
   .stores .store { flex: 1 1 200px; }
   .store img { width: 100%; height: auto; }
 
@@ -1257,3 +1235,202 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 .btn--lancement { background: var(--hero-bg); }
 .btn--lancement:hover { background: var(--subject-reward); }
 .btn--lancement .cd-mini { color: var(--hero-bg); }
+
+/* ============================================================
+   DEMONSTRATION — trois ecrans d'application qui se remplissent
+   ============================================================ */
+
+.demo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1.1rem;
+}
+
+.tel {
+  flex: 1 1 0;
+  max-width: 190px;
+  margin: 0;
+  opacity: .42;
+  transform: translateY(0);
+  transition: opacity .45s ease, transform .45s ease;
+}
+.tel.est-actif { opacity: 1; transform: translateY(-16px); }
+
+.tel-cadre {
+  position: relative;
+  aspect-ratio: 9 / 19;
+  padding: 9px 7px 7px;
+  border: var(--neo-border) solid var(--ink);
+  border-radius: 26px;
+  background: var(--ink);
+  box-shadow: var(--shadow-md);
+}
+.tel-cadre::before {
+  content: "";
+  position: absolute;
+  top: 7px; left: 50%;
+  transform: translateX(-50%);
+  width: 32%; height: 7px;
+  border-radius: var(--r100);
+  background: #2E2E2E;
+}
+
+.tel-ecran {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  height: 100%;
+  padding: 1.15rem .55rem .55rem;
+  overflow: hidden;
+  border-radius: 19px;
+  background: var(--box-bg);
+}
+
+.tel-titre {
+  font-size: .56rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-hint);
+}
+
+.tel-champ {
+  padding: .3rem .4rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 7px;
+  background: var(--surface-inset);
+}
+.tel-champ small {
+  display: block;
+  font-size: .46rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--text-hint);
+}
+.tel-champ b {
+  display: block;
+  min-height: 1.15em;
+  font-size: .62rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  word-break: break-word;
+}
+.tel-champ--fort { border-color: var(--ink); background: var(--subject-payment-fill); }
+.tel-champ--fort b { font-size: .8rem; font-weight: 800; }
+
+/* curseur de saisie */
+.tel-champ b.saisit::after {
+  content: "";
+  display: inline-block;
+  width: 1px; height: .95em;
+  margin-left: 1px;
+  background: var(--ink);
+  vertical-align: -.12em;
+  animation: tel-curseur .7s steps(1) infinite;
+}
+@keyframes tel-curseur { 50% { opacity: 0; } }
+
+.tel-bouton {
+  margin-top: auto;
+  padding: .45rem .3rem;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: var(--accent);
+  font-size: .6rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--ink);
+  transition: transform .12s ease, background-color .2s ease;
+}
+.tel-bouton.appuye { transform: translateY(2px); background: var(--subject-reward); }
+
+/* carte "un confrere reprend" */
+.tel-carte {
+  padding: .45rem;
+  border: 2px solid var(--ink);
+  border-radius: 9px;
+  background: var(--box-bg);
+  box-shadow: 2px 2px 0 var(--ink);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+.tel-carte.visible { opacity: 1; transform: none; }
+.tel-badge {
+  display: inline-block;
+  padding: .1rem .35rem;
+  border-radius: var(--r100);
+  background: var(--subject-group-fill);
+  color: var(--subject-group-deep);
+  font-size: .45rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.tel-nom { margin-top: .25rem; font-size: .68rem; font-weight: 800; }
+.tel-meta { font-size: .5rem; color: var(--text-hint); }
+
+.tel-ligne {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .3rem;
+  padding: .25rem 0;
+  border-bottom: 1px solid var(--border-soft);
+  font-size: .56rem;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.tel-ligne.visible { opacity: 1; }
+.tel-ligne:last-of-type { border-bottom: 0; }
+.tel-ligne b { font-size: .62rem; font-variant-numeric: tabular-nums; }
+.tel-ligne .ok { color: var(--subject-group-deep); }
+.tel-ligne .moins { color: #B23A3A; }
+
+.tel-total {
+  margin-top: .2rem;
+  padding: .4rem;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: var(--accent);
+  text-align: center;
+  opacity: 0;
+  transform: scale(.96);
+  transition: opacity .35s ease, transform .35s ease;
+}
+.tel-total.visible { opacity: 1; transform: none; }
+.tel-total small {
+  display: block;
+  font-size: .46rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.tel-total b { font-size: 1.05rem; font-weight: 800; letter-spacing: -.02em; }
+
+.tel-note {
+  margin-top: .3rem;
+  font-size: .48rem;
+  line-height: 1.3;
+  color: var(--text-hint);
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.tel-note.visible { opacity: 1; }
+
+.tel-legende {
+  margin-top: .8rem;
+  font-size: .72rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-hint);
+}
+.tel.est-actif .tel-legende { color: var(--text-strong); }
+
+@media (max-width: 760px) {
+  .demo { gap: .6rem; }
+  .tel-legende { font-size: .62rem; }
+  .tel.est-actif { transform: translateY(-8px); }
+}

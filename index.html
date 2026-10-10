@@ -449,10 +449,55 @@
       <p class="cd-date">Ouverture des inscriptions le <b>1<sup>er</sup> janvier 2027</b>.</p>
 
       <div class="app-band">
-        <div class="app-shots">
-          <span class="shot" data-label="Accueil"></span>
-          <span class="shot" data-label="Course"></span>
-          <span class="shot" data-label="Gains"></span>
+        <div class="demo" id="demo" aria-label="Le parcours d'une course cédée, en trois écrans">
+          <figure class="tel" data-etape="1">
+            <div class="tel-cadre">
+              <div class="tel-ecran">
+                <span class="tel-titre">Publier une course</span>
+                <div class="tel-champ"><small>Départ</small><b data-saisie="Gare Part-Dieu, Lyon"></b></div>
+                <div class="tel-champ"><small>Arrivée</small><b data-saisie="Aéroport St-Exupéry"></b></div>
+                <div class="tel-champ"><small>Prise en charge</small><b data-saisie="Mer. 06h15"></b></div>
+                <div class="tel-champ tel-champ--fort"><small>Rétrocession</small><b data-saisie="60,00 €"></b></div>
+                <div class="tel-bouton" data-bouton>Publier et bloquer</div>
+              </div>
+            </div>
+            <figcaption class="tel-legende">1 · Vous publiez</figcaption>
+          </figure>
+
+          <figure class="tel" data-etape="2">
+            <div class="tel-cadre">
+              <div class="tel-ecran">
+                <span class="tel-titre">Course disponible</span>
+                <div class="tel-carte" data-carte>
+                  <span class="tel-badge">Carte VTC vérifiée</span>
+                  <div class="tel-nom">Karim B.</div>
+                  <div class="tel-meta">4,9 ★ · 312 courses · à 6 min</div>
+                </div>
+                <div class="tel-ligne" data-ligne><span>Net pour lui</span><b>60,00 €</b></div>
+                <div class="tel-ligne" data-ligne><span>Montant</span><b class="ok">déjà bloqué</b></div>
+                <div class="tel-ligne" data-ligne><span>Assurance</span><b class="ok">à jour</b></div>
+                <div class="tel-bouton" data-bouton>Accepter la course</div>
+              </div>
+            </div>
+            <figcaption class="tel-legende">2 · Un confrère vérifié reprend</figcaption>
+          </figure>
+
+          <figure class="tel" data-etape="3">
+            <div class="tel-cadre">
+              <div class="tel-ecran">
+                <span class="tel-titre">Course terminée</span>
+                <div class="tel-ligne" data-ligne><span>Prix client</span><b>80,00 €</b></div>
+                <div class="tel-ligne" data-ligne><span>Rétrocession</span><b class="moins">−60,00 €</b></div>
+                <div class="tel-total" data-total>
+                  <small>Vous gardez</small>
+                  <b>20,00 €</b>
+                </div>
+                <p class="tel-note" data-note>Facture générée des deux côtés. Vous n'avez pas pris le volant.</p>
+                <div class="tel-bouton" data-bouton>Voir la facture</div>
+              </div>
+            </div>
+            <figcaption class="tel-legende">3 · Vous gardez la différence</figcaption>
+          </figure>
         </div>
         <div class="app-get">
           <p class="app-claim">Réservée aux professionnels du transport public particulier de personnes.</p>
