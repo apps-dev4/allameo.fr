@@ -365,6 +365,9 @@ h1 mark, h2 mark, .mark {
   clip-path: polygon(14% 48%, 0 62%, 38% 100%, 100% 22%, 86% 8%, 38% 72%);
 }
 
+/* Image du haut de page : trois écrans de l'application (tableau de bord, courses disponibles, groupes). */
+.hero-visuel { margin: clamp(1.6rem, 4vw, 2.4rem) auto 0; max-width: 1000px; }
+.hero-visuel img { display: block; width: 100%; height: auto; }
 .hero-card {
   max-width: 940px;
   margin: 2.8rem auto 0;
