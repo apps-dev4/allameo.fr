@@ -180,114 +180,140 @@
     setInterval(majPastilles, 60000);
   }
 
-  /* ---- demonstration : trois ecrans qui se remplissent ---- */
-  var demo = document.getElementById('demo');
+  // Démo vidéo des fonctionnalités : une seule vidéo joue, celle du centre ; à sa fin, on passe à la suivante.
+  var demo = document.querySelector('[data-demo]');
+
   if (demo) {
-    var tels = demo.querySelectorAll('.tel');
-    var minuteries = [];
-    var horloge = 0;
+    var piste   = demo.querySelector('.demo-track');
+    var diapos  = demo.querySelectorAll('.demo-slide');
+    var onglets = demo.querySelectorAll('.demo-tab');
+    var points  = demo.querySelectorAll('.demo-dot');
+    var texte   = demo.querySelector('.demo-desc');
+    var lecture = demo.querySelector('.demo-lecture');
+    var barre   = demo.querySelector('.demo-tabs');
+    var actif = 0;
+    var enLecture = !reduceMotion;
+    var visible = !('IntersectionObserver' in window);
+    var cible = -1, cibleFin = 0, minuteurTexte;
 
-    /* planifie une action a un instant absolu depuis le debut du cycle */
-    var plus = function (ms, action) {
-      horloge += ms;
-      minuteries.push(setTimeout(action, horloge));
-    };
+    var video = function (i) { return diapos[i].querySelector('video'); };
 
-    var actif = function (n) {
-      for (var i = 0; i < tels.length; i++) {
-        tels[i].classList.toggle('est-actif', i === n);
-      }
-    };
-
-    var saisir = function (champ, vitesse) {
-      var texte = champ.getAttribute('data-saisie') || '';
-      plus(0, function () { champ.classList.add('saisit'); });
-      for (var i = 1; i <= texte.length; i++) {
-        (function (n) {
-          plus(vitesse, function () { champ.textContent = texte.slice(0, n); });
-        })(i);
-      }
-      plus(120, function () { champ.classList.remove('saisit'); });
-    };
-
-    var montrer = function (el, delai) {
-      plus(delai, function () { if (el) { el.classList.add('visible'); } });
-    };
-
-    var appuyer = function (bouton, delai) {
-      plus(delai, function () { if (bouton) { bouton.classList.add('appuye'); } });
-      plus(220, function () { if (bouton) { bouton.classList.remove('appuye'); } });
-    };
-
-    var remettre = function () {
-      for (var i = 0; i < minuteries.length; i++) { clearTimeout(minuteries[i]); }
-      minuteries = [];
-      horloge = 0;
-      var champs = demo.querySelectorAll('[data-saisie]');
-      for (var c = 0; c < champs.length; c++) {
-        champs[c].textContent = '';
-        champs[c].classList.remove('saisit');
-      }
-      var masques = demo.querySelectorAll('[data-carte], [data-ligne], [data-total], [data-note]');
-      for (var m = 0; m < masques.length; m++) { masques[m].classList.remove('visible'); }
-      var boutons = demo.querySelectorAll('[data-bouton]');
-      for (var b = 0; b < boutons.length; b++) { boutons[b].classList.remove('appuye'); }
-    };
-
-    /* etat final, sans animation : mouvement reduit ou onglet inactif */
-    var figer = function () {
-      remettre();
-      var champs = demo.querySelectorAll('[data-saisie]');
-      for (var c = 0; c < champs.length; c++) {
-        champs[c].textContent = champs[c].getAttribute('data-saisie');
-      }
-      var masques = demo.querySelectorAll('[data-carte], [data-ligne], [data-total], [data-note]');
-      for (var m = 0; m < masques.length; m++) { masques[m].classList.add('visible'); }
-      for (var t = 0; t < tels.length; t++) { tels[t].classList.add('est-actif'); }
-    };
-
-    var cycle = function () {
-      remettre();
-
-      /* ecran 1 : on publie la course */
-      plus(300, function () { actif(0); });
-      var champs1 = tels[0].querySelectorAll('[data-saisie]');
-      for (var i = 0; i < champs1.length; i++) {
-        plus(190, function () {});
-        saisir(champs1[i], 23);
-      }
-      appuyer(tels[0].querySelector('[data-bouton]'), 450);
-
-      /* ecran 2 : un confrere verifie la reprend */
-      plus(500, function () { actif(1); });
-      montrer(tels[1].querySelector('[data-carte]'), 280);
-      var lignes2 = tels[1].querySelectorAll('[data-ligne]');
-      for (var j = 0; j < lignes2.length; j++) { montrer(lignes2[j], 170); }
-      appuyer(tels[1].querySelector('[data-bouton]'), 520);
-
-      /* ecran 3 : le partage */
-      plus(500, function () { actif(2); });
-      var lignes3 = tels[2].querySelectorAll('[data-ligne]');
-      for (var k = 0; k < lignes3.length; k++) { montrer(lignes3[k], 230); }
-      montrer(tels[2].querySelector('[data-total]'), 330);
-      montrer(tels[2].querySelector('[data-note]'), 280);
-
-      /* respiration, puis on recommence */
-      plus(2600, cycle);
-    };
-
-    if (reduceMotion) {
-      figer();
-    } else {
-      cycle();
-      document.addEventListener('visibilitychange', function () {
-        if (document.hidden) {
-          for (var i = 0; i < minuteries.length; i++) { clearTimeout(minuteries[i]); }
-          minuteries = [];
-        } else {
-          cycle();
+    var joue = function () {
+      for (var i = 0; i < diapos.length; i++) {
+        var v = video(i);
+        if (i === actif && enLecture && visible) {
+          v.preload = 'auto';
+          var p = v.play();
+          if (p && p.catch) p.catch(function () {});
+        } else if (!v.paused) {
+          v.pause();
         }
+      }
+    };
+
+    var majLecture = function () {
+      lecture.classList.toggle('is-paused', !enLecture);
+      lecture.setAttribute('aria-label', enLecture ? 'Mettre en pause' : 'Lancer la lecture');
+    };
+
+    var active = function (i) {
+      if (i === actif) return;
+      var avant = video(actif);
+      avant.pause();
+      try { avant.currentTime = 0; } catch (e) {}
+      actif = i;
+      for (var k = 0; k < diapos.length; k++) {
+        diapos[k].classList.toggle('is-active', k === i);
+        if (k === i) {
+          onglets[k].setAttribute('aria-current', 'true');
+          points[k].setAttribute('aria-current', 'true');
+        } else {
+          onglets[k].removeAttribute('aria-current');
+          points[k].removeAttribute('aria-current');
+        }
+      }
+      // En mobile, les onglets tiennent sur une ligne qui défile : on y recentre l'onglet actif.
+      if (barre.scrollWidth > barre.clientWidth) {
+        barre.scrollTo({
+          left: onglets[i].offsetLeft - (barre.clientWidth - onglets[i].offsetWidth) / 2,
+          behavior: reduceMotion ? 'auto' : 'smooth'
+        });
+      }
+      clearTimeout(minuteurTexte);
+      texte.classList.add('is-out');
+      minuteurTexte = setTimeout(function () {
+        texte.textContent = diapos[i].getAttribute('data-desc');
+        texte.classList.remove('is-out');
+      }, 180);
+      joue();
+    };
+
+    var va = function (i, doux) {
+      i = (i + diapos.length) % diapos.length;
+      var d = diapos[i];
+      cible = i;
+      cibleFin = Date.now() + 1500;
+      piste.scrollTo({
+        left: d.offsetLeft + d.offsetWidth / 2 - piste.clientWidth / 2,
+        behavior: doux && !reduceMotion ? 'smooth' : 'auto'
       });
+      active(i);
+    };
+
+    // Le doigt fait défiler la rangée : la diapositive la plus proche du centre devient l'active.
+    var attente = false;
+    piste.addEventListener('scroll', function () {
+      if (attente) return;
+      attente = true;
+      window.requestAnimationFrame(function () {
+        attente = false;
+        var centre = piste.scrollLeft + piste.clientWidth / 2, proche = 0, ecart = Infinity;
+        for (var i = 0; i < diapos.length; i++) {
+          var e = Math.abs(diapos[i].offsetLeft + diapos[i].offsetWidth / 2 - centre);
+          if (e < ecart) { ecart = e; proche = i; }
+        }
+        if (cible >= 0 && Date.now() < cibleFin) {
+          if (proche === cible) cible = -1;
+          return;
+        }
+        cible = -1;
+        active(proche);
+      });
+    }, { passive: true });
+
+    Array.prototype.forEach.call(diapos, function (d, i) {
+      onglets[i].addEventListener('click', function () { va(i, true); });
+      points[i].addEventListener('click', function () { va(i, true); });
+      d.addEventListener('click', function () {
+        if (i !== actif) { va(i, true); return; }
+        if (video(i).paused) { enLecture = true; majLecture(); joue(); }
+      });
+      video(i).addEventListener('ended', function () {
+        if (i === actif && enLecture) va(i + 1, true);
+      });
+    });
+
+    Array.prototype.forEach.call(demo.querySelectorAll('[data-pas]'), function (b) {
+      b.addEventListener('click', function () { va(actif + Number(b.getAttribute('data-pas')), true); });
+    });
+
+    lecture.addEventListener('click', function () {
+      enLecture = !enLecture;
+      majLecture();
+      joue();
+    });
+
+    if (!visible) {
+      new IntersectionObserver(function (entrees) {
+        visible = entrees[0].isIntersecting;
+        joue();
+      }, { threshold: .25 }).observe(piste);
     }
+
+    window.addEventListener('resize', function () { va(actif, false); });
+
+    diapos[0].classList.add('is-active');
+    majLecture();
+    joue();
   }
 })();

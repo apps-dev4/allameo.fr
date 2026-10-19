@@ -524,15 +524,16 @@ h1 mark, h2 mark, .mark {
 
 .app-claim { font-size: 1.1rem; font-weight: 600; color: var(--text-strong); }
 .stores { display: flex; flex-wrap: wrap; gap: .9rem; margin: 1.4rem 0 1.1rem; }
+/* Badges noirs (usage des stores) : l'ombre prend la couleur de la marque, sinon noir sur noir elle disparaît. */
 .store {
   display: inline-flex;
-  border-radius: 12px;
-  box-shadow: var(--shadow-md);
+  border-radius: 9px;
+  box-shadow: 4px 4px 0 var(--accent);
   transition: transform .12s ease, box-shadow .12s ease;
 }
-.store img { height: 62px; width: auto; }
-.store:hover  { transform: translate(2px, 2px); box-shadow: var(--shadow-sm); }
-.store:active { transform: translate(5px, 5px); box-shadow: 0 0 0 var(--ink); }
+.store img { height: 48px; width: auto; }
+.store:hover  { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--accent); }
+.store:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--accent); }
 .app-note { font-size: .88rem; color: var(--text-hint); margin: 0; }
 
 .stat {
@@ -777,10 +778,9 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   .feature p { padding: 0 1.1rem 1.1rem; }
   .fam-block + .fam-block { margin-top: 2.2rem; }
   .app-band { grid-template-columns: 1fr; }
-  .demo { order: 2; }
-  .tel.est-actif { transform: translateY(-8px); }
-  .stores .store { flex: 1 1 200px; }
-  .store img { width: 100%; height: auto; }
+  .stores { gap: .7rem; }
+  .stores .store { flex: 0 0 auto; }
+  .store img { height: 40px; width: auto; }
 
   .cmp { grid-template-columns: 1fr; gap: .5rem; }
   .cmp thead th { display: none; }
@@ -1194,9 +1194,6 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 /* badges de stores en attente de publication */
 .store--soon {
   position: relative;
-  display: inline-block;
-  filter: grayscale(1);
-  opacity: .5;
   cursor: default;
 }
 .stores-note {
@@ -1236,201 +1233,160 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 .btn--lancement:hover { background: var(--subject-reward); }
 .btn--lancement .cd-mini { color: var(--hero-bg); }
 
-/* ============================================================
-   DEMONSTRATION — trois ecrans d'application qui se remplissent
-   ============================================================ */
+/* Démo vidéo des fonctionnalités : onglets, rangée de téléphones aimantée, points.
+   Les vidéos sont l'écran seul (622 × 1312) ; le cadre du téléphone est dessiné ici. */
+.demo { --slide-w: clamp(200px, 60vw, 268px); margin: 0 0 3.4rem; }
 
-.demo {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 1.1rem;
-}
-
-.tel {
-  flex: 1 1 0;
-  max-width: 190px;
-  margin: 0;
-  opacity: .42;
-  transform: translateY(0);
-  transition: opacity .45s ease, transform .45s ease;
-}
-.tel.est-actif { opacity: 1; transform: translateY(-16px); }
-
-.tel-cadre {
-  position: relative;
-  aspect-ratio: 9 / 19;
-  padding: 9px 7px 7px;
+.demo-tabs { position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: .55rem; margin: 0 0 1.1rem; }
+.demo-tab {
+  --tab: var(--subject-ride);
+  font: inherit;
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--box-bg);
   border: var(--neo-border) solid var(--ink);
-  border-radius: 26px;
-  background: var(--ink);
-  box-shadow: var(--shadow-md);
+  border-radius: var(--r100);
+  box-shadow: var(--shadow-sm);
+  padding: .45rem 1.05rem;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background-color .2s ease;
 }
-.tel-cadre::before {
+.demo-tab--payment  { --tab: var(--subject-payment); }
+.demo-tab--document { --tab: var(--subject-document); }
+.demo-tab--group    { --tab: var(--subject-group); }
+.demo-tab:hover { background: var(--box-bg-hover); }
+.demo-tab[aria-current="true"] { background: var(--tab); transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+
+.demo-desc {
+  text-align: center;
+  max-width: 54ch;
+  min-height: 3.3em;
+  margin: 0 auto 1.4rem;
+  color: var(--text);
+  transition: opacity .18s ease;
+}
+.demo-desc.is-out { opacity: 0; }
+
+.demo-track {
+  position: relative;
+  display: flex;
+  gap: clamp(.9rem, 3vw, 2rem);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  padding: .6rem calc(50% - var(--slide-w) / 2) 1.4rem;
+}
+.demo-track::-webkit-scrollbar { display: none; }
+
+.demo-slide {
+  flex: 0 0 var(--slide-w);
+  margin: 0;
+  scroll-snap-align: center;
+  transform: scale(.86);
+  opacity: .5;
+  cursor: pointer;
+  transition: transform .35s ease, opacity .35s ease;
+}
+.demo-slide.is-active { transform: none; opacity: 1; cursor: default; }
+
+.demo-phone {
+  position: relative;
+  background: #1C1C1C;
+  border: var(--neo-border) solid var(--ink);
+  border-radius: calc(var(--slide-w) * .15);
+  padding: calc(var(--slide-w) * .022);
+  box-shadow: var(--shadow-lg);
+}
+.demo-phone::before,
+.demo-phone::after {
   content: "";
   position: absolute;
-  top: 7px; left: 50%;
-  transform: translateX(-50%);
-  width: 32%; height: 7px;
-  border-radius: var(--r100);
-  background: #2E2E2E;
+  width: 4px;
+  border-radius: 2px;
+  background: #1C1C1C;
 }
-
-.tel-ecran {
-  display: flex;
-  flex-direction: column;
-  gap: .3rem;
-  height: 100%;
-  padding: 1.15rem .55rem .55rem;
-  overflow: hidden;
-  border-radius: 19px;
-  background: var(--box-bg);
-}
-
-.tel-titre {
-  font-size: .56rem;
-  font-weight: 800;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--text-hint);
-}
-
-.tel-champ {
-  padding: .3rem .4rem;
-  border: 1px solid var(--border-soft);
-  border-radius: 7px;
-  background: var(--surface-inset);
-}
-.tel-champ small {
+.demo-phone::before { left: -7px; top: 22%; height: 12%; }
+.demo-phone::after  { right: -7px; top: 28%; height: 16%; }
+.demo-phone video {
   display: block;
-  font-size: .46rem;
-  font-weight: 800;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-  color: var(--text-hint);
+  width: 100%;
+  height: auto;
+  aspect-ratio: 622 / 1312;
+  border-radius: calc(var(--slide-w) * .13);
+  background: var(--screen-bg);
+  object-fit: cover;
 }
-.tel-champ b {
-  display: block;
-  min-height: 1.15em;
-  font-size: .62rem;
-  font-weight: 600;
-  color: var(--text-strong);
-  word-break: break-word;
-}
-.tel-champ--fort { border-color: var(--ink); background: var(--subject-payment-fill); }
-.tel-champ--fort b { font-size: .8rem; font-weight: 800; }
 
-/* curseur de saisie */
-.tel-champ b.saisit::after {
-  content: "";
-  display: inline-block;
-  width: 1px; height: .95em;
-  margin-left: 1px;
-  background: var(--ink);
-  vertical-align: -.12em;
-  animation: tel-curseur .7s steps(1) infinite;
-}
-@keyframes tel-curseur { 50% { opacity: 0; } }
-
-.tel-bouton {
-  margin-top: auto;
-  padding: .45rem .3rem;
-  border: 2px solid var(--ink);
-  border-radius: 8px;
-  background: var(--accent);
-  font-size: .6rem;
+.demo-controls { display: flex; align-items: center; justify-content: center; gap: .8rem; margin-top: .4rem; }
+.demo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  font: inherit;
+  font-size: 1.6rem;
   font-weight: 800;
-  text-align: center;
+  line-height: 1;
   color: var(--ink);
-  transition: transform .12s ease, background-color .2s ease;
-}
-.tel-bouton.appuye { transform: translateY(2px); background: var(--subject-reward); }
-
-/* carte "un confrere reprend" */
-.tel-carte {
-  padding: .45rem;
-  border: 2px solid var(--ink);
-  border-radius: 9px;
   background: var(--box-bg);
-  box-shadow: 2px 2px 0 var(--ink);
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity .35s ease, transform .35s ease;
+  border: var(--neo-border) solid var(--ink);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
 }
-.tel-carte.visible { opacity: 1; transform: none; }
-.tel-badge {
-  display: inline-block;
-  padding: .1rem .35rem;
+.demo-btn:hover { background: var(--box-bg-hover); }
+.demo-btn:active { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--ink); }
+.demo-btn span { margin-top: -3px; }
+.demo-ico-pause { display: block; width: 12px; height: 14px; margin: 0 !important; border-inline: 4px solid var(--ink); }
+.demo-lecture.is-paused .demo-ico-pause {
+  width: 0;
+  height: 0;
+  margin-left: 4px !important;
+  border-block: 8px solid transparent;
+  border-inline: 13px solid var(--ink) 0;
+  border-right-width: 0;
+}
+
+.demo-dots { display: flex; gap: .45rem; padding-inline: .4rem; }
+.demo-dot {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border: 2.5px solid var(--ink);
   border-radius: var(--r100);
-  background: var(--subject-group-fill);
-  color: var(--subject-group-deep);
-  font-size: .45rem;
-  font-weight: 800;
-  letter-spacing: .04em;
-  text-transform: uppercase;
+  background: var(--box-bg);
+  cursor: pointer;
+  transition: width .25s ease, background-color .25s ease;
 }
-.tel-nom { margin-top: .25rem; font-size: .68rem; font-weight: 800; }
-.tel-meta { font-size: .5rem; color: var(--text-hint); }
+.demo-dot[aria-current="true"] { width: 28px; background: var(--ink); }
 
-.tel-ligne {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: .3rem;
-  padding: .25rem 0;
-  border-bottom: 1px solid var(--border-soft);
-  font-size: .56rem;
-  opacity: 0;
-  transition: opacity .3s ease;
-}
-.tel-ligne.visible { opacity: 1; }
-.tel-ligne:last-of-type { border-bottom: 0; }
-.tel-ligne b { font-size: .62rem; font-variant-numeric: tabular-nums; }
-.tel-ligne .ok { color: var(--subject-group-deep); }
-.tel-ligne .moins { color: #B23A3A; }
+/* Sous le carrousel, le bloc de téléchargement occupe seul la bande. */
+.demo + .app-band { margin-top: 0; }
+.app-band.app-band--seul { grid-template-columns: 1fr; max-width: 820px; margin-inline: auto; text-align: center; }
+.app-band--seul .stores { justify-content: center; }
+.app-band--seul .app-claim { max-width: 56ch; margin-inline: auto; }
 
-.tel-total {
-  margin-top: .2rem;
-  padding: .4rem;
-  border: 2px solid var(--ink);
-  border-radius: 8px;
-  background: var(--accent);
-  text-align: center;
-  opacity: 0;
-  transform: scale(.96);
-  transition: opacity .35s ease, transform .35s ease;
+@media (max-width: 768px) {
+  .demo { margin-bottom: 2.6rem; }
+  .demo-tabs {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-inline: -1.25rem;
+    padding: .25rem 1.25rem .55rem;
+  }
+  .demo-tabs::-webkit-scrollbar { display: none; }
+  .demo-tab { flex: none; font-size: .88rem; padding: .4rem .85rem; }
+  .demo-desc { min-height: 4.95em; font-size: .98rem; }
 }
-.tel-total.visible { opacity: 1; transform: none; }
-.tel-total small {
-  display: block;
-  font-size: .46rem;
-  font-weight: 800;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-}
-.tel-total b { font-size: 1.05rem; font-weight: 800; letter-spacing: -.02em; }
 
-.tel-note {
-  margin-top: .3rem;
-  font-size: .48rem;
-  line-height: 1.3;
-  color: var(--text-hint);
-  opacity: 0;
-  transition: opacity .3s ease;
-}
-.tel-note.visible { opacity: 1; }
-
-.tel-legende {
-  margin-top: .8rem;
-  font-size: .72rem;
-  font-weight: 700;
-  text-align: center;
-  color: var(--text-hint);
-}
-.tel.est-actif .tel-legende { color: var(--text-strong); }
-
-@media (max-width: 760px) {
-  .demo { gap: .6rem; }
-  .tel-legende { font-size: .62rem; }
-  .tel.est-actif { transform: translateY(-8px); }
+/* Même marge que .wrap sous 560 px : la ligne d'onglets va jusqu'aux bords de l'écran, sans dépasser. */
+@media (max-width: 560px) {
+  .demo-tabs { margin-inline: -.9rem; padding-inline: .9rem; }
 }
